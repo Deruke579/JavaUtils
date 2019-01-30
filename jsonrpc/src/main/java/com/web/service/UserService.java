@@ -6,8 +6,8 @@ import com.web.model.User;
  * Created by Kelly on 2019/1/30.
  */
 public interface UserService {
-    User createUser(String userName, String firstName, String password);
-    User createUser(String userName, String password);
-    User findUserByUserName(String userName);
+    User createUsers(String userName, String firstName, String password);
+    String createUser(String userName, String password);
+    String findUserByUserName(String userName);
     int getUserCount();
 }

@@ -8,22 +8,22 @@ import com.web.service.UserService;
  */
 public class UserServiceImpl implements UserService{
 
-    public User createUser(String userName, String firstName, String password) {
-        User user = new User();
-        user.setUserName(userName);
-        user.setFirstName(firstName);
-        user.setPassword(password);
+    public User createUsers(String userName, String firstName, String password) {
+        User user = new User(userName,firstName,password);
+//        user.setUserName(userName);
+//        user.setFirstName(firstName);
+//        user.setPassword(password);
 //        database.saveUser(user);
         return user;
     }
 
-    public User createUser(String userName, String password) {
-        return this.createUser(userName, null, password);
+    public String createUser(String userName, String password) {
+        return "ffffffff";
     }
 
-    public User findUserByUserName(String userName) {
+    public String findUserByUserName(String userName) {
 //        return database.findUserByUserName(userName);
-        return null;
+        return "ffff";
     }
 
     public int getUserCount() {

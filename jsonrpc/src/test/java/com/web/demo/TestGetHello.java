@@ -1,9 +1,9 @@
 package com.web.demo;
 
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
+import com.web.model.User;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringRunner;
+
 
 import java.net.URL;
 
@@ -32,5 +32,50 @@ public class TestGetHello {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void testPostUser() {
+        try {
+            JsonRpcHttpClient client = new JsonRpcHttpClient(new URL("http://localhost:8080/UserService.json"));
+//            String result = client.invoke("createUser", new Object[]{"王五", "赵六"}, new User("","",""));
+//            System.out.println(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void testPost1() {
+        try {
+            JsonRpcHttpClient client = new JsonRpcHttpClient(new URL("http://localhost:8080/UserService.json"));
+//            String[] params = new String[] { String.valueOf(1), "ffffffff" };
+            String result = client.invoke("createUser", new Object[]{"王五","fff"}, String.class);
+            System.out.println(result);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testPost2() {
+        try {
+            JsonRpcHttpClient client = new JsonRpcHttpClient(new URL("http://localhost:8080/UserService.json"));
+//            String[] params = new String[] { String.valueOf(1), "ffffffff" };
+            String result = client.invoke("createUser", new Object[]{"王五","fff","ffffff"}, String.class);
+            System.out.println(result);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

@@ -29,20 +29,28 @@
 
     <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>-->
 
-    <!--<bean id="userService" class="com.web.service.Impl.UserServiceImpl">-->
-    <!--</bean>-->
+    <bean id="userService" class="com.web.service.Impl.UserServiceImpl">
+    </bean>
 
-    <!--<bean name="/UserService.json" class="com.googlecode.jsonrpc4j.spring.JsonServiceExporter">-->
-        <!--<property name="service" ref="userService"/>-->
-        <!--<property name="serviceInterface" value="com.mycompany.UserService"/>-->
-    <!--</bean>-->
+    <bean name="/UserService.json" class="com.googlecode.jsonrpc4j.spring.JsonServiceExporter">
+        <property name="service" ref="userService"/>
+        <property name="serviceInterface" value="com.web.service.UserService"/>
+    </bean>
 
     <!-- 配置文件方式 -->
     <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+
     <bean id="testManager" class="com.web.demo.TestManagerImpl" />
+
     <bean name="/test.json" class="com.googlecode.jsonrpc4j.spring.JsonServiceExporter">
         <property name="service" ref="testManager"/>
         <property name="serviceInterface" value="com.web.demo.TestManager"/>
+    </bean>
+
+    <bean id="helloWorldService" class="com.web.hello.HelloWorldServiceImpl"/>
+    <bean name="/StudyJsonrpc4j/rpc" class="com.googlecode.jsonrpc4j.spring.JsonServiceExporter">
+        <property name="service" ref="helloWorldService"/>
+        <property name="serviceInterface" value="com.web.hello.HelloWorldService"/>
     </bean>
 
 </beans>
