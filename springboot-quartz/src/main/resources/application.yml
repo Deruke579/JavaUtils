@@ -1,0 +1,12 @@
+quartz:
+  enabled: true
+server:
+  port: 9090
+spring:
+  datasource:
+    url: jdbc:mysql://119.23.106.27:3306/develop
+    username: root
+    password: Kelly579
+
+# 网址：https://www.cnblogs.com/ealenxie/p/9134602.html
+
